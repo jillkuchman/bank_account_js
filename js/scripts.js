@@ -16,6 +16,10 @@ $(document).ready(function() {
 
         var initial_deposit = parseFloat($('input#initial-deposit').val());
 
+        if (isNaN(initial_deposit)) {
+            initial_deposit = 0;
+        }
+
         var newBankAccount = Object.create(BankAccount);
         newBankAccount.username = inputted_name;
         newBankAccount.deposit(initial_deposit);
