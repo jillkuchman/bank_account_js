@@ -33,10 +33,10 @@ $(document).ready(function() {
         if (newBankAccount.balance >= 5) {
             var balance_color = 'green';
         }
-        else if (newBankAccount.balance < 5 && newBankAccount.balance > 0) {
+        else if (newBankAccount.balance < 5 && newBankAccount.balance > 1) {
             var balance_color = 'orange';
         }
-        else if (newBankAccount.balance <= 0){
+        else if (newBankAccount.balance <= 1){
             var balance_color = 'red';
         }
 
@@ -75,14 +75,17 @@ $(document).ready(function() {
             newBankAccount.deposit(deposit_amount);
             newBankAccount.withdraw(withdraw_amount);
 
+            $('input#deposit').val('');
+            $('input#withdraw').val('');
+
             // Sets the color of account balance
             if (newBankAccount.balance >= 5) {
                 var balance_color = 'green';
             }
-            else if (newBankAccount.balance < 5 && newBankAccount.balance > 0) {
+            else if (newBankAccount.balance < 5 && newBankAccount.balance > 1) {
                 var balance_color = 'orange';
             }
-            else if (newBankAccount.balance <= 0){
+            else if (newBankAccount.balance <= 1){
                 var balance_color = 'red';
             }
 
