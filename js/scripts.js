@@ -14,7 +14,6 @@ $(document).ready(function() {
 
         var inputted_name = $('input#user-name').val();
 
-        // toFixed later....
         var initial_deposit = parseFloat($('input#initial-deposit').val());
 
         var newBankAccount = Object.create(BankAccount);
@@ -30,7 +29,7 @@ $(document).ready(function() {
         // Shows account balance section
         $('#account-balance').show();
 
-        $('#current-balance').text('Your bank account\'s balance is: $' + newBankAccount.balance);
+        $('#current-balance').text('Your bank account\'s balance is: $' + newBankAccount.balance.toFixed(2));
 
         // Hides and resets sign up form section
         $('#splash-page').hide();
@@ -45,7 +44,21 @@ $(document).ready(function() {
             var deposit_amount = parseFloat($('input#deposit').val());
             var withdraw_amount = parseFloat($('input#withdraw').val());
 
-            // call methods deposit and withdraw on newBankAccount object
+            // if user inputs nothing, this will assume zero is being deposited or withdrawn
+            if (isNaN(deposit_amount)) {
+                deposit_amount = 0;
+            }
+
+            if (isNaN(withdraw_amount)) {
+                withdraw_amount = 0;
+            }
+
+            // if user inputs nothing for both fields, user gets a rude message
+            if (deposit_amount === 0 && withdraw_amount === 0) {
+                alert('You\'re wasting your time, ya jabroni!');
+            }
+
+            // Magical things happen here...
             newBankAccount.deposit(deposit_amount);
             newBankAccount.withdraw(withdraw_amount);
 
