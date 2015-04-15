@@ -29,7 +29,20 @@ $(document).ready(function() {
         // Shows account balance section
         $('#account-balance').show();
 
-        $('#current-balance').text('Your bank account\'s balance is: $' + newBankAccount.balance.toFixed(2));
+        // Sets the color of account balance
+        if (newBankAccount.balance >= 5) {
+            var balance_color = 'green';
+        }
+        else if (newBankAccount.balance < 5 && newBankAccount.balance > 0) {
+            var balance_color = 'orange';
+        }
+        else if (newBankAccount.balance <= 0){
+            var balance_color = 'red';
+        }
+
+
+        $('#current-balance').html('Your bank account\'s balance is: <span id=\'balance-color\' style= color:' + balance_color + '>$' + newBankAccount.balance.toFixed(2) + '</span>');
+
 
         // Hides and resets sign up form section
         $('#splash-page').hide();
@@ -62,8 +75,20 @@ $(document).ready(function() {
             newBankAccount.deposit(deposit_amount);
             newBankAccount.withdraw(withdraw_amount);
 
+            // Sets the color of account balance
+            if (newBankAccount.balance >= 5) {
+                var balance_color = 'green';
+            }
+            else if (newBankAccount.balance < 5 && newBankAccount.balance > 0) {
+                var balance_color = 'orange';
+            }
+            else if (newBankAccount.balance <= 0){
+                var balance_color = 'red';
+            }
+
+
             // Display updated amount in bank account
-            $('#current-balance').text('Your bank account\'s balance is: $' + newBankAccount.balance.toFixed(2));
+            $('#current-balance').html('Your bank account\'s balance is: <span id=\'balance-color\' style= color:' + balance_color + '>$' + newBankAccount.balance.toFixed(2) + '</span>');
 
         });
 
