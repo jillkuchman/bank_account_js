@@ -50,6 +50,8 @@ $(document).ready(function() {
 
         $('#current-balance').html('Your bank account\'s balance is: <span id=\'balance-color\' style= color:' + balance_color + '>$' + newBankAccount.balance.toFixed(2) + '</span>');
 
+        $('#yen-converter').html('In Yen, your account balance is: &#65509;' + (newBankAccount.balance.toFixed(2) * 119.15).toFixed(2));
+
 
         // Hides and resets sign up form section
         $('#splash-page').hide();
@@ -100,6 +102,8 @@ $(document).ready(function() {
             // Display updated amount in bank account
             $('#current-balance').html('Your bank account\'s balance is: <span id=\'balance-color\' style= color:' + balance_color + '>$' + newBankAccount.balance.toFixed(2) + '</span>');
 
+            $('#yen-converter').html('In Yen, your account balance is: &#65509;' + (newBankAccount.balance.toFixed(2) * 119.15).toFixed(2));
+
         });
 
         $('button#logout-btn').click(function() {
@@ -115,6 +119,7 @@ $(document).ready(function() {
             // Hides log out button
             $('#logout-btn').hide();
 
+            $('#account-name').text('');
 
         });
     });
