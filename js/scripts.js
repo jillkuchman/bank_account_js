@@ -30,7 +30,7 @@ $(document).ready(function() {
     }
 
     function viewUpdateBalance() {
-        $('#current-balance').html('Your bank account\'s balance is: <span id=\'balance-color\' style= color:' + balance_color + '>$' + newBankAccount.balance.toFixed(2) + '</span>');
+        $('#current-balance').html(newBankAccount.username + ', your bank account\'s balance is: <span id=\'balance-color\' style= color:' + balance_color + '>$' + newBankAccount.balance.toFixed(2) + '</span>');
         $('#yen-converter').html('In Yen, your account balance is: &#65509;' + (newBankAccount.balance.toFixed(2) * 119.15).toFixed(2));
     }
 
@@ -51,7 +51,7 @@ $(document).ready(function() {
         newBankAccount.deposit(initial_deposit);
 
         //Displays user name in header
-        $('#account-name').text(', ' + newBankAccount.username + "!");
+        // $('#account-name').text(newBankAccount.username + ", ");
 
         // Shows deposit or withdraw form section
         $('#deposit-withdraw').show();
