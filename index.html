@@ -26,7 +26,7 @@
                     <h3>Sign up for a bank account:</h3>
                     <form id='create-account'>
                         <div class='form-group'>
-                            <input type='text' id='user-name' class='form-control' placeholder='Your name'>
+                            <input type='text' id='user-name' class='form-control' placeholder='Your name' required>
                         </div>
                         <div class='form-group'>
                             <input type='number' step='0.01' min='0' id='initial-deposit' class='form-control' placeholder='Initial deposit'>
@@ -61,8 +61,10 @@
             </div>
             <div class='page-footer'>
                 <div class='logout'>
-                    <!-- log out button, hidden by default  -->
-                    <button id='logout-btn' class='btn btn-warning'>Log Out</button>
+                    <form action='index.html' method='post'>
+                        <!-- log out button, hidden by default  -->
+                        <button id='logout-btn' class='btn btn-warning'>Log Out</button>
+                    </form>
                 </div>
             </div>
         </div><!-- END DIV CONTAINER -->
