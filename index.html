@@ -20,7 +20,7 @@
             <div class='page-header'>
                 <h1>Welcome to your Bank<span id=account-name></span></h1>
             </div>
-            <div id='row'>
+            <div class='row'>
                 <div id='splash-page' class='col-md-12'>
                     <!-- 1st page -->
                     <h3>Sign up for a bank account:</h3>
@@ -35,6 +35,7 @@
                     </form>
                 </div>
 
+                <!-- deposit/withdraw form, hidden by default  -->
                 <div id='deposit-withdraw'>
                     <div class='col-md-6'>
                         <h3>Deposit or Withdraw Money</h3>
@@ -49,11 +50,18 @@
                         </form>
                     </div>
                 </div>
+                <!-- account balance display, hidden by default  -->
 
                 <div id='account-balance'>
                     <div class='col-md-6'>
                         <h3 id='current-balance'><span id='current-balance-value'></span></h3>
                     </div>
+                </div>
+            </div>
+            <div class='page-footer'>
+                <div class='logout'>
+                    <!-- log out button, hidden by default  -->
+                    <button id='logout-btn' class='btn btn-warning'>Log Out</button>
                 </div>
             </div>
         </div><!-- END DIV CONTAINER -->

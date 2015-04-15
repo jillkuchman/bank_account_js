@@ -33,6 +33,9 @@ $(document).ready(function() {
         // Shows account balance section
         $('#account-balance').show();
 
+        // Shows log out button
+        $('#logout-btn').show();
+
         // Sets the color of account balance
         if (newBankAccount.balance >= 5) {
             var balance_color = 'green';
@@ -99,5 +102,20 @@ $(document).ready(function() {
 
         });
 
+        $('button#logout-btn').click(function() {
+            // Shows main page
+            $('#splash-page').show();
+
+            // Hides deposit or withdraw form section
+            $('#deposit-withdraw').hide();
+
+            // Hides account balance section
+            $('#account-balance').hide();
+
+            // Hides log out button
+            $('#logout-btn').hide();
+
+
+        });
     });
 });
